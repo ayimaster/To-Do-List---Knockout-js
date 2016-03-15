@@ -57,7 +57,19 @@
         </tr>
       </tbody>
     </table>
-
+ <div class="row">
+     <div class="col-md-12">
+      <span data-bind="visible: toDoList.tasks().length > 0">
+        <strong> 
+        Total: 
+        <span data-bind="text:toDoList.tasks().length"></span>
+        </strong>
+      </span>
+      <span data-bind="visible: toDoList.tasks().length == 0 ">
+        <strong>No tasks in my list</strong>
+      </span>
+     </div>
+   </div>
   </div>
 
 </body>

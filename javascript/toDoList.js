@@ -49,8 +49,7 @@ var toDoList = function () {
     });
   };
   
-  
-  
+   
   var init = function() {
     ko.applyBindings(toDoList);
   };
