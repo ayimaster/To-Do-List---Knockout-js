@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" />
+  <title>Knockout : ToDo List Example</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="bower_components/knockout/dist/knockout.js"></script>
+  <script type="text/javascript" src="javascript/toDoList.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>My ToDo List</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        Name
+        <input type="text" data-bind="value: toDoList.task.name" /> Description
+        <input type="text" data-bind="value:toDoList.task.description" /> Priority
+        <select data-bind="value: toDoList.task.priority">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <button class="btn btn-primary" data-bind="click: toDoList.addTask">Add</button>
+      </div>
+          </div>
+          <div class="row">
+      <div class="col-md-12">
+        Sort by
+        <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default" data-bind="click: toDoList.sortByPriority">Priority</button> <button type="button" class="btn btn-default" data-bind="click: toDoList.sortByName">Name</button>
+        </div>
+      </div>
+    </div>
+   
+    <table class="table">
+      <thead>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: toDoList.tasks">
+        <tr data-bind="css:{ success: status() == 'complete'}">
+          <td data-bind="text: name"></td>
+          <td data-bind="text: description"></td>
+          <td data-bind="text: priority"></td>
+          <td>
+            <button class="btn btn-success" data-bind="visible: status() != 'complete', click: toDoList.completeTask">Complete</button>
+            <button class="btn btn-danger" data-bind="click: toDoList.deleteTask">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "ToDoList",
+  "homepage": "n",
+  "authors": [
+    "Ayima Okeeva <ayimaster@gmail.com>"
+  ],
+  "description": "simple to do list app",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "knockout"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "knockout": "~3.4.0"
+  }
+}
