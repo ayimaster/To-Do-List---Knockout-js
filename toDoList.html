@@ -27,16 +27,17 @@
         </select>
         <button class="btn btn-primary" data-bind="click: toDoList.addTask">Add</button>
       </div>
-          </div>
-          <div class="row">
+    </div>
+    <div class="row">
       <div class="col-md-12">
         Sort by
         <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" data-bind="click: toDoList.sortByPriority">Priority</button> <button type="button" class="btn btn-default" data-bind="click: toDoList.sortByName">Name</button>
+          <button type="button" class="btn btn-default" data-bind="click: toDoList.sortByPriority">Priority</button>
+          <button type="button" class="btn btn-default" data-bind="click: toDoList.sortByName">Name</button>
         </div>
       </div>
     </div>
-   
+
     <table class="table">
       <thead>
         <th>Name</th>
@@ -57,21 +58,20 @@
         </tr>
       </tbody>
     </table>
- <div class="row">
-     <div class="col-md-12">
-      <span data-bind="visible: toDoList.tasks().length > 0">
+    <div class="row">
+      <div class="col-md-12">
+        <span data-bind="visible: toDoList.tasks().length > 0">
         <strong> 
         Total: 
         <span data-bind="text:toDoList.tasks().length"></span>
         </strong>
-      </span>
-      <span data-bind="visible: toDoList.tasks().length == 0 ">
+        <strong>Completed: <span data-bind="text:toDoList.numOfCompletedTasks()"></span></strong>
+        </span>
+        <span data-bind="visible: toDoList.tasks().length == 0 ">
         <strong>No tasks in my list</strong>
       </span>
-     </div>
-   </div>
+      </div>
+    </div>
   </div>
-
 </body>
-
 </html>
